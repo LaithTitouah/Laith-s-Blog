@@ -8,16 +8,42 @@ body {
   grid-template-rows: min-content auto;
   grid-template-columns: 250px auto;
   height: 100vh;
+  width: 100vw;
   overflow: scroll;
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  background-color: black;
+  align-items: center;
+  background-color: rgb(65, 189, 231);
   color: white;
   grid-column: 1 / span 2;
-  padding: 10px 5px;
+  padding: 20px 30px;
+  background-image: url("../assets/background2.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 75% 45%;
+}
+header h1{
+  color: white;
+}
+header div {
+  display: flex;
+  gap:10px;
+}
+header button {
+  color: black;
+  padding: 10px 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px #2980b9;
+  transition: all 0.1s ease;
+  min-width: 100px;
+}
+header button:hover {
+  background-color: #2980b9;
+  box-shadow: 0 2px #1c5d99;
+  transform: translateY(2px);
 }
 
 form {
@@ -40,12 +66,22 @@ article {
 }
 
 nav {
-  background-color: #dee9ff;
+  background-color: rgb(39, 159, 199);
 }
-
+nav p {
+  color: white;
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+  transition : color 0.3s;
+}
 nav p:hover {
-  text-decoration: underline;
   cursor: pointer;
+  background-color: rgb(29, 119, 149);
+  border-radius: 20px;
+  color:white;
+  border-radius: 5px;
+  color:rgb(253, 253, 253);
 }
 
 article .date {
@@ -55,9 +91,23 @@ article .date {
 article .body {
   white-space: break-spaces;
 }
-
 .error {
   background-color: red;
   color: gold;
   padding: 5px;
+}
+nav, article, form {
+  transition: margin-left .6s ease, width .6s ease;
+}
+
+@media (max-width: 600px) {
+  nav {
+    width: 80px;
+  }
+  article {
+    margin-left: -150px;
+  }
+  form {
+    margin-left: -150px
+  }
 }
